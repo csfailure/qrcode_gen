@@ -1,4 +1,6 @@
 # qrcode_gen
+:metal: :metal: :metal: :metal::metal: :metal: :metal: :metal::metal: :metal: :metal: :metal::metal: :metal: :metal: :metal::metal: :metal: :metal: :metal:
+
 QR Code Generator App Using Python
 
 
@@ -22,4 +24,4 @@ Run:
 python qr_gen.py
 ```
 
- :metal: :metal: :metal: :metal:
+ :metal: :metal: :metal: :metal::metal: :metal: :metal: :metal::metal: :metal: :metal: :metal::metal: :metal: :metal: :metal::metal: :metal: :metal: :metal:
