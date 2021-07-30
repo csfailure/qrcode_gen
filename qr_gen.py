@@ -4,6 +4,8 @@ from kivy.lang import Builder
 import qrcode
 import os
 import sys
+import string
+import random
 
 class Function(ScreenManager):
     def qrgen(self, root):
@@ -12,13 +14,15 @@ class Function(ScreenManager):
             code.add_data(self.ids.link.text)
             code.make(fit=True)
             img = code.make_image()
-            img.save("qr.png")
+            letters = string.ascii_lowercase
+            self.name= (''.join(random.choice(letters) for i in range(10)) + ".png" )
+            img.save(self.name)
         
 
     def viewimg(self,root):
-        self.ids.qr.source = "qr.png"
+        self.ids.qr.source = self.name
         root.current = "im"
-        os.remove("qr.png")
+        os.remove(self.name)
 
     def restart(self):
         self.stop()
@@ -27,7 +31,8 @@ class Function(ScreenManager):
     def try_again(self,root):
         self.ids.link.text = ""
         root.current = "home"
-        os.execl(sys.executable, os.path.abspath(__file__), *sys.argv) 
+        #os.execl(sys.executable, os.path.abspath(__file__), *sys.argv)
+        
 
 class Main(MDApp):
     Builder.load_file('layout.kv')
